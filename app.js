@@ -38,8 +38,11 @@ window.addEventListener('load',()=>{
            
               locationTimezone.textContent=data.timezone;
 
-               // set Icons
+              //formula for celsius
 
+              let celsius =(temperature - 32) *(5/9);
+
+               // set Icons
                setIcons(icon,document.querySelector('.icon'));
 
 
@@ -48,9 +51,11 @@ window.addEventListener('load',()=>{
                temperatureSection.addEventListener('click',() =>{
                    if(temperatureSpan.textContent ==="F"){
                        temperatureSpan.textContent = "C";
+                       temperatureDegree.textContent= Math.floor(celsius);
                    }
                    else{
-                       temperatureSpan.textContent="F"
+                       temperatureSpan.textContent="F";
+                       temperatureDegree.textContent = temperature;
                    }
                })
            
